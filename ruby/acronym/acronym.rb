@@ -1,0 +1,8 @@
+class Acronym
+  FIRST_LETTER_OF_WORD_PATTERN = /\b[[:alpha:]]/
+  
+  def self.abbreviate(phrase)
+    phrase.scan(FIRST_LETTER_OF_WORD_PATTERN).join.upcase
+  end
+end
+
