@@ -4,7 +4,7 @@ class Triangle
     @a, @b, @c =  @sides_values
   end
 
-  def is_triangle?
+  def triangle_inequality?
     @sides_values.all? { |side| side !=0 } &&
     @a + @b > @c &&
     @b + @c > @a &&
@@ -12,7 +12,7 @@ class Triangle
   end
 
   def degenerate?
-    if is_triangle?
+    if triangle_inequality?
       @a + @b == @c ||
       @b + @c == @a ||
       @a + @c == @b
@@ -30,19 +30,19 @@ class Triangle
   end
 
   def equilateral?
-    if is_triangle?
+    if triangle_inequality?
       matching_sides == 3
     end
   end
 
   def isosceles?
-    if is_triangle?
+    if triangle_inequality?
       matching_sides >= 2
     end
   end
 
   def scalene?
-    if is_triangle?
+    if triangle_inequality?
       matching_sides == 0
     end
   end
