@@ -11,6 +11,10 @@ class Triangle
     @a + @c > @b
   end
 
+  def hasNoZeroSides
+    
+  end
+
   def degenerate?
     if triangle_inequality?
       @a + @b == @c ||
