@@ -18,4 +18,4 @@ describe Triangle do
     expect(Triangle.new([2, 3, 4]).isosceles?).to eq false
   end
 
-end
+end 
