@@ -11,7 +11,7 @@ class SumOfMultiples
     end
 
     answer = arr.uniq.inject(:+)
-    
+
     if answer == nil
       0
     else
