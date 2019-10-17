@@ -11,8 +11,9 @@ describe ResistorColorDuo do
   end
 
   it "Expected '50' when ['green', 'black'] input" do
-    expect(ResistorColorDuo.value(["green", "black"])).to eq 50 
+    expect(ResistorColorDuo.value(["green", "black"])).to eq 50
   end
+
 end
 
 
