@@ -4,19 +4,22 @@ class Triangle
     @a, @b, @c =  @sides_values
   end
 
+  def sides_non_zero?
+    @sides_values.all? { |side| side !=0 }
+  end
+
   def triangle_inequality?
-    @sides_values.all? { |side| side !=0 } &&
+    sides_non_zero? &&
     @a + @b > @c &&
     @b + @c > @a &&
     @a + @c > @b
   end
 
   def degenerate?
-    if triangle_inequality?
-      @a + @b == @c ||
-      @b + @c == @a ||
-      @a + @c == @b
-    end
+    sides_non_zero? &&
+    @a + @b == @c ||
+    @b + @c == @a ||
+    @a + @c == @b
   end
 
   def matching_sides
