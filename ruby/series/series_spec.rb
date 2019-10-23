@@ -2,7 +2,6 @@ require 'rspec'
 require_relative 'series.rb'
 
 describe Series do
-
   it "should return '['123456', '234567', '345678', '456789']'
       with '123456789' string and serie of 6 digits" do
     expect(Series.new('123456789').slices(6)).to eq ['123456', '234567', '345678', '456789']
@@ -13,9 +12,8 @@ describe Series do
     expect(Series.new('12345').slices(1)).to eq ['1', '2', '3', '4', '5']
   end
 
-    it "should return '['12', '23', '34', '45', '56']'
+  it "should return '['12', '23', '34', '45', '56']'
       with '12345' string and serie of 6 digits" do
     expect(Series.new('123456').slices(2)).to eq ['12', '23', '34', '45', '56']
   end
-
 end
