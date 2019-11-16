@@ -5,12 +5,9 @@ class Series
 
   def slices length_of_serie
     raise ArgumentError if @string_of_digits.size < length_of_serie
-    arr = []
-    @string_of_digits.each_cons(length_of_serie) { |i| arr << i.join }
-    arr
+    @string_of_digits.each_cons(length_of_serie).map { |i| i.join }
   end
 end
-
 
 
 
