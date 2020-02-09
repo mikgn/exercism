@@ -6,16 +6,30 @@ class ResistorColorTrio
   COLORS =  %w(black brown red orange yellow green blue violet grey white)
 
   def label
-    raise ArgumentError unless (@colors - COLORS).empty?
+    validation
+    calculation
+    create_label
+  end
 
+
+  private
+
+
+  def validation
+    raise ArgumentError unless (@colors - COLORS).empty?
+  end
+
+  def calculation
     zeros = "0" * COLORS.index(@colors.last)
     digits = @colors.first(2).map { |color| COLORS.index(color) }.join
-    n = (digits + zeros).to_i
+    @value = (digits + zeros).to_i
+  end
 
-    if (n % 1000).zero?
-      "Resistor value: #{n/1000} kiloohms"
+  def create_label
+    if (@value % 1000).zero?
+      "Resistor value: #{@value/1000} kiloohms"
     else
-      "Resistor value: #{n} ohms"
+      "Resistor value: #{@value} ohms"
     end
   end
 end
