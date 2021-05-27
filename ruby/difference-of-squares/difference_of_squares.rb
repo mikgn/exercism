@@ -1,6 +1,6 @@
 class Squares
   def initialize(digit)
-    @arr_of_digits = 1.upto(digit).map { |d| d }
+    @arr_of_digits = (1..digit).to_a
   end
 
   def square_of_sum
@@ -15,6 +15,3 @@ class Squares
     square_of_sum - sum_of_squares
   end
 end
-
-
-
