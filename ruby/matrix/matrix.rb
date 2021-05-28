@@ -1,4 +1,4 @@
-# #1
+# frozen_string_literal: true
 
 class Matrix
   attr_reader :rows, :columns
@@ -8,8 +8,6 @@ class Matrix
     @columns = rows.transpose
   end
 end
-
-# #2
 
 # class Matrix
 #   def initialize(matrix)
@@ -24,10 +22,3 @@ end
 #     @columns ||= rows.transpose
 #   end
 # end
-
-
-
-
-
-
-

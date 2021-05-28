@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Squares
   def initialize(digit)
     @arr_of_digits = (1..digit).to_a

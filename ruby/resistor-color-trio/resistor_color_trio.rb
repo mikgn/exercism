@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ResistorColorTrio
   def initialize(colors)
     @colors = colors

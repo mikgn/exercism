@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Acronym
   FIRST_LETTER_PATTERN = /\b[[:alpha:]]/
 

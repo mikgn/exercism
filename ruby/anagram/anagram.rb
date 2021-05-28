@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Anagram
   def initialize(word)
     @word = word
