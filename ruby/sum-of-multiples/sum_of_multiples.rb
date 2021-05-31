@@ -7,21 +7,15 @@ class SumOfMultiples
     arr = []
 
     1.upto(num - 1) .map do |a|
-     @numbers.map { |number| arr << a if a % number == 0 }
+      @numbers.map { |number| arr << a if (a % number).zero? }
     end
 
     answer = arr.uniq.inject(:+)
 
-    if answer == nil
+    if answer.nil?
       0
     else
       answer
     end
   end
 end
-
-
-
-
-
-

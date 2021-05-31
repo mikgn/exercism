@@ -1,25 +1,25 @@
 class Triangle
   def initialize(sides_values)
     @sides_values = sides_values
-    @a, @b, @c =  @sides_values
+    @a, @b, @c = @sides_values
   end
 
   def sides_non_zero?
-    @sides_values.all? { |side| side !=0 }
+    @sides_values.all? { |side| side != 0 }
   end
 
   def triangle_inequality?
     sides_non_zero? &&
-    @a + @b > @c &&
-    @b + @c > @a &&
-    @a + @c > @b
+      @a + @b > @c &&
+      @b + @c > @a &&
+      @a + @c > @b
   end
 
   def degenerate?
     sides_non_zero? &&
-    @a + @b == @c ||
-    @b + @c == @a ||
-    @a + @c == @b
+      @a + @b == @c ||
+      @b + @c == @a ||
+      @a + @c == @b
   end
 
   def matching_sides
@@ -33,21 +33,14 @@ class Triangle
   end
 
   def equilateral?
-    if triangle_inequality?
-      matching_sides == 3
-    end
+    matching_sides == 3 if triangle_inequality?
   end
 
   def isosceles?
-    if triangle_inequality?
-      matching_sides >= 2
-    end
+    matching_sides >= 2 if triangle_inequality?
   end
 
   def scalene?
-    if triangle_inequality?
-      matching_sides == 0
-    end
+    matching_sides.zero? if triangle_inequality?
   end
 end
-
