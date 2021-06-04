@@ -8,7 +8,8 @@ class Anagram
   def match(possible_ans)
     anagrams = []
     possible_ans.each do |ans|
-      skip if @word.downcase == ans.downcase
+      next if @word.downcase == ans.downcase
+
       anagrams << ans if @word.downcase.chars.sort == ans.downcase.chars.sort
     end
     anagrams
