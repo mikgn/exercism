@@ -1,11 +1,9 @@
+# frozen_string_literal: true
+
 class Triangle
   def initialize(sides_values)
     @sides_values = sides_values
     @a, @b, @c = @sides_values
-  end
-
-  def sides_non_zero?
-    @sides_values.all? { |side| side != 0 }
   end
 
   def triangle_inequality?
@@ -22,16 +20,6 @@ class Triangle
       @a + @c == @b
   end
 
-  def matching_sides
-    if @sides_values.uniq.length == 1
-      3
-    elsif @sides_values.uniq.length == 2
-      2
-    else
-      0
-    end
-  end
-
   def equilateral?
     matching_sides == 3 if triangle_inequality?
   end
@@ -42,5 +30,20 @@ class Triangle
 
   def scalene?
     matching_sides.zero? if triangle_inequality?
+  end
+
+  private
+
+  def matching_sides
+    case @sides_values.uniq.length
+    when 1 then 3
+    when 2 then 2
+    else
+      0
+    end
+  end
+
+  def sides_non_zero?
+    @sides_values.all? { |side| side != 0 }
   end
 end

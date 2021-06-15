@@ -3,10 +3,6 @@
 class HighScores
   attr_reader :scores
 
-  def scores
-    @scores ||= scores
-  end
-
   def initialize(scores)
     @scores = scores
   end
