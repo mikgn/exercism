@@ -7,11 +7,17 @@ class Anagram
 
   def match(possible_ans)
     anagrams = []
-    possible_ans.each do |ans|
-      next if @word.downcase == ans.downcase
 
-      anagrams << ans if @word.downcase.chars.sort == ans.downcase.chars.sort
+    possible_ans.each do |ans|
+      next if word.downcase == ans.downcase
+
+      anagrams << ans if word.downcase.chars.sort == ans.downcase.chars.sort
     end
+
     anagrams
   end
+
+  private
+
+  attr_reader :word
 end
